@@ -10,13 +10,15 @@
   --text-color: #ffffff;
   --bg-input: #18181B;
   --stroke-color-input: #27272A;
+  --hover-color: #252525;
 }
 
 .light-mode {
   --bg-color: #ffffff;
   --text-color: #000000;
   --bg-input: #f4f4f7f3;
-  --stroke-color-input: #d9d9df;
+  --stroke-color-input: #dddddf;
+  --hover-color: #faf9f9;
 }
 
 * {
@@ -58,6 +60,10 @@
     border-radius: 50%;
   }
 
+  #switcher:hover {
+    background-color: var(--hover-color);
+  }
+
   .day-log {
     display: flex;
     flex-direction: row;
@@ -67,6 +73,10 @@
     border: 1px solid #8B5CF6;
     border-radius: 8px;
     background-color: transparent;
+  }
+
+  .day-log:hover {
+    background-color: var(--hover-color);
   }
 
   .day-log div {
