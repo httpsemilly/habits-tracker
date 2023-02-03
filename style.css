@@ -8,7 +8,6 @@
 :root{
   --bg-color: #09090A;
   --text-color: #ffffff;
-  --logo-icon-img: url(./assets/logo-icon-dark-mode.png);
   --bg-input: #18181B;
   --stroke-color-input: #27272A;
 }
@@ -16,9 +15,8 @@
 .light-mode {
   --bg-color: #ffffff;
   --text-color: #000000;
-  --logo-icon-img: url(./assets/logo-icon-light-mode.png);
-  --bg-input: #dedee2c9;
-  --stroke-color-input: #c6c6cf;
+  --bg-input: #f4f4f7f3;
+  --stroke-color-input: #d9d9df;
 }
 
 * {
@@ -45,13 +43,6 @@
     width: 100%;
     padding: 48px;
   }
-
-/*
-  #logo-app {
-    width: 120px;
-    height: 58px;
-  }
-*/
 
   .buttons {
     display: flex;
@@ -154,5 +145,14 @@
   @media (max-width: 570px) {
     button div {
       display: none;
+    }
+
+    #logo-app {
+      width: 120px;
+      height: 66px;
+    }
+  
+    .day-log {
+      padding: 12px 20px;
     }
   }

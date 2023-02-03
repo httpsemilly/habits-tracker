@@ -1,20 +1,50 @@
-/* constante 'form' recebendo o objeto 'document' com o método 'querySelector' que seleciona o primeiro elemento 
-que corresponde a um ou mais seletores CSS */
-// o objeto 'document' representa uma página web e permite acessar qualquer elemento HTML da página
+let count1 = 0;
+let count2 = 0;
+
+function toggleMode() {
+    let html = document.documentElement;
+
+    html.classList.toggle("light-mode");
+}
+
+function changeLogo() {
+    const logo = document.getElementById('logo-app');
+
+    if (count1 == 0) {
+        logo.src = './assets/logo-light-mode.svg';
+        count1 = 1;
+    } else {
+        logo.src = './assets/logo-dark-mode.svg';
+        count1 = 0;
+    }
+}
+
+function changeLampIcon() {
+    const image = document.getElementById('lamp-img');
+
+    if (count2 == 0) {
+        image.src = './assets/lamp-on.svg';
+        count2 = 1;
+    } else {
+        image.src = './assets/lamp-off.svg';
+        count2 = 0;
+    }
+}
+
+function replaceStyle() {
+    toggleMode();
+    changeLogo();
+    changeLampIcon();
+}
+
 const form = document.querySelector('form');
-
-// constante nlwSetup recebendo um novo objeto 'NLWSetup' que recebe como parâmetro a constante 'form'
 const nlwSetup = new NLWSetup(form);
-
-// constante 'button' recebendo o objeto 'document' com o método 'querySelector'
 const button = document.querySelector('.day-log');
 
-// acessando o método 'addEventListener' do objeto 'button'
-// 
 button.addEventListener('click', add);
-//
+
 form.addEventListener('change', save);
-//
+
 function add() {
     let today = new Date().toLocaleDateString('pt-br');
     const dayExists = nlwSetup.dayExists(today);
